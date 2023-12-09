@@ -1,16 +1,9 @@
 $Data = Get-Content (Join-Path $PSScriptRoot -ChildPath "PuzzleData.txt")
 $Solution = 0
 
+$puzzleToSolve = 1
+
 $NumberLookup = @{
-    'one' = '1'
-    'two' = '2'
-    'three' = '3'
-    'four' = '4'
-    'five' = '5'
-    'six' = '6'
-    'seven' = '7'
-    'eight' = '8'
-    'nine' = '9'
     "0" = '0'
     "1" = '1'
     "2" = '2'
@@ -22,6 +15,21 @@ $NumberLookup = @{
     "8" = '8'
     "9" = '9'
 }
+
+if ($puzzleToSolve -eq 2) {
+    $NumberLookup += @{
+        'one' = '1'
+        'two' = '2'
+        'three' = '3'
+        'four' = '4'
+        'five' = '5'
+        'six' = '6'
+        'seven' = '7'
+        'eight' = '8'
+        'nine' = '9'
+    }
+}
+
 
 foreach ($line in $Data) {
     $Indexes = [System.collections.generic.list[PSCustomObject]]::new()
